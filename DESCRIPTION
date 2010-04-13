@@ -1,0 +1,14 @@
+Package: flowMeans
+Type: Package
+Title: Non-parametric Flow Cytometry Data Gating
+Version: 0.99.1
+Date: 2010-03-02
+Author: Nima Aghaeepour
+Maintainer: Nima Aghaeepour <naghaeep@bccrc.ca>
+Description: Finds a good fit to the data using k-means clustering algorithm. Then merges the adjacent dense spherical clusters to find non-spherical cluster shapes. Number of clusters is determined using a piece-wise-linear-regression-based change point detection algorithm on the mahalanobis distance between the clusters. 
+Imports: Biobase, graphics, grDevices, methods, rrcov, stats, feature, flowCore
+Depends: R (>= 2.11.0)
+License: Artistic-2.0
+biocViews: Bioinformatics, FlowCytometry, CellBiology, Clustering, Cancer, FlowCytData, StemCells,  HIV
+LazyLoad: yes
+
