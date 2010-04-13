@@ -20,7 +20,7 @@ R.R. Brinkman, M. Gasparetto, S.J.J. Lee, A.J. Ribickas, J. Perkins,
 W. Janssen, R. Smiley, and C. Smith. High-content flow cytometry
 and temporal data analysis for defining a cellular signature of graft-
 versus-host disease. Biology of Blood and Marrow Transplantation,
-13(6):691?700, 2007.
+13(6):691-700, 2007.
 }
 %\references{
 %%  ~~ possibly secondary sources and usages ~~
