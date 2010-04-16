@@ -29,5 +29,5 @@ LazyLoad: \tab yes\cr
 library(flowMeans)
 data(x)
 res <- flowMeans(x, c("FL1.H", "FL2.H", "FL3.H", "FL4.H"), MaxN=10)
-plot(x[,c(3,4)], res, c("FL1.H", "FL2.H"))
+plot(x, res, c("FL1.H", "FL2.H"))
 }

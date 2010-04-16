@@ -38,7 +38,8 @@ Nima Aghaeepour <\email{naghaeep@bccrc.ca}>
 \examples{
 library(flowMeans)
 data(x)
-plot(data.frame(x))
+res <- flowMeans(x, c("FL1.H", "FL2.H", "FL3.H", "FL4.H"), MaxN=10)
+plot(x, res, c("FL1.H", "FL2.H"))
 }
 
 \keyword{graphs}
