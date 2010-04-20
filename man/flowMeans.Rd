@@ -9,7 +9,7 @@ clusters.
 }
 \usage{
 flowMeans(x, varNames=NULL, MaxN = NA, NumC = NA, iter.max = 50, nstart = 10,
-Mahalanobis = TRUE, Standardize = TRUE, Update = "Mahalanobis",
+Mahalanobis = TRUE, Standardize = TRUE, Update = "Mahalanobis", OrthagonalResiduals=TRUE,
 MaxCovN=NA, MaxKernN=NA, addNoise=TRUE)
 }
 \arguments{
@@ -56,6 +56,10 @@ MaxCovN=NA, MaxKernN=NA, addNoise=TRUE)
   Boolean value. Determines if uniform noise must be added to the data
   to prevent singularity issues or not. 
 }
+  \item{OrthagonalResiduals}{
+    Boolean value, indicates if the residuals must be transformed to
+  orthagonal distance or not.
+    }
 
 }
 
@@ -105,7 +109,7 @@ MaxCovN=NA, MaxKernN=NA, addNoise=TRUE)
 library(flowMeans)
 data(x)
 res <- flowMeans(x, c("FL1.H", "FL2.H", "FL3.H", "FL4.H"), MaxN=10)
-plot(x, res, c("FL1.H", "FL2.H"))
+plot(x[,c(3,4)], res, c("FL1.H", "FL2.H"))
 }
 
 \keyword{ nonparametric }

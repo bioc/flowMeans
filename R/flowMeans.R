@@ -2,7 +2,7 @@
 
 
 flowMeans <-
-function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis=TRUE, Standardize=TRUE, Update='Mahalanobis', MaxCovN=NA, MaxKernN=NA, addNoise=TRUE){
+function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis=TRUE, Standardize=TRUE, Update='Mahalanobis', OrthagonalResiduals=TRUE, MaxCovN=NA, MaxKernN=NA, addNoise=TRUE){
 
   if(is(x,"flowFrame"))
   {
@@ -159,7 +159,7 @@ function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis
   }
   Mins[MaxN-N+1] <- Min;
 
-  temp <- changepointDetection(Mins);
+  temp <- changepointDetection(Mins, OrthagonalResiduals=OrthagonalResiduals);
   Line1<-temp$l1;
   Line2<-temp$l2;
   MinIndex <- MaxN-temp$MinIndex;
