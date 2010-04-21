@@ -1,7 +1,7 @@
 
                                         #Finds the change point using piece wise linear regressions. See the Rd document for details. 
 changepointDetection <-
-function(vect, OrthagonalResiduals=TRUE, PlotFlag=FALSE){
+function(vect, OrthagonalResiduals=FALSE, PlotFlag=FALSE){
   n<-length(vect);
   Vect<-vect;
 

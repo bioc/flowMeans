@@ -9,7 +9,7 @@ clusters.
 }
 \usage{
 flowMeans(x, varNames=NULL, MaxN = NA, NumC = NA, iter.max = 50, nstart = 10,
-Mahalanobis = TRUE, Standardize = TRUE, Update = "Mahalanobis", OrthagonalResiduals=TRUE,
+Mahalanobis = TRUE, Standardize = TRUE, Update = "Mahalanobis", OrthagonalResiduals=FALSE,
 MaxCovN=NA, MaxKernN=NA, addNoise=TRUE)
 }
 \arguments{
@@ -38,10 +38,10 @@ MaxCovN=NA, MaxKernN=NA, addNoise=TRUE)
     [0,1] interval. 
 }
   \item{Update}{
-    String value. If set to "mahalanobis" the distance function will be
+    String value. If set to "Mahalanobis" the distance function will be
     updated at each merging iteration with recalculating mahalanobis
-    distances. If set to "mean" the distance matrix will be updated
-    after each merging step with averaging. If set to "none" the
+    distances. If set to "Mean" the distance matrix will be updated
+    after each merging step with averaging. If set to "None" the
     distance matrix will not be updated. 
  }
   \item{MaxCovN}{

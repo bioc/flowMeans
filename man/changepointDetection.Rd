@@ -7,7 +7,7 @@ Fits a two-component piecewise linear regression to the minimum distance
 between merged clusters vs the number of clusters for a list of merged cluster solutions.
 }
 \usage{
-changepointDetection(vect, OrthagonalResiduals = TRUE, PlotFlag = FALSE)
+changepointDetection(vect, OrthagonalResiduals = FALSE, PlotFlag = FALSE)
 }
 
 \arguments{

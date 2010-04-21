@@ -2,7 +2,7 @@
 
 
 flowMeans <-
-function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis=TRUE, Standardize=TRUE, Update='Mahalanobis', OrthagonalResiduals=TRUE, MaxCovN=NA, MaxKernN=NA, addNoise=TRUE){
+function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis=TRUE, Standardize=TRUE, Update='Mahalanobis', OrthagonalResiduals=FALSE, MaxCovN=NA, MaxKernN=NA, addNoise=TRUE){
 
   if(is(x,"flowFrame"))
   {
