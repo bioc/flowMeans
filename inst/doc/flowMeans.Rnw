@@ -1,4 +1,4 @@
-%\VignetteIndexEntry{flowMerge package}
+%\VignetteIndexEntry{flowMeans: Non-parametric Flow Cytometry Data Gating}
 %\VignetteKeywords{Preprocessing,statistics}
 
 
@@ -31,7 +31,7 @@ Under the Artistic License, you are free to use and redistribute this software.
 
 \section{Overview}
 
-We apply a non-parametric approach to perform automated gating of cell populations in flow cytometry data. Our clustering results are obtained with couting the number of modes in every single dimention followed by multidimentional clustering. Then adjacent clusters (in terms of euclidiean or mahalanobis distance) are merged. The number of clusters is determined using change point detection algorithm based on piecewise linear regression. This approach allows multiple clusters to represent the same population. This enables our framework to find non-spherical cell populations.
+We apply a non-parametric approach to perform automated gating of cell populations in flow cytometry data. Our clustering results are obtained with counting the number of modes in every single dimension followed by multidimensional clustering. Then adjacent clusters (in terms of Euclidean or Mahalanobis distance) are merged. The number of clusters is determined using change point detection algorithm based on piecewise linear regression. This approach allows multiple clusters to represent the same population. This enables our framework to find non-spherical cell populations.
 Development of flowMeans is partly motivated by the advent of high-throughput flow cytometry. Using the k-means algorithm, flowMeans avoids using complex statistical models. This, results in improving the runtime of current model-based population identification methods without decreasing their accuracy.
 
 \section{Example}
@@ -46,7 +46,7 @@ data(x)
 res <- flowMeans(x, c("FL1.H", "FL2.H", "FL3.H", "FL4.H"), MaxN=10)
 @ 
 
-$varNames$ must contain a vector of parameter names that need to be analysed. By providing the parameter names, the user must make sure that no extra paramdeters (e.g., time and ID) are passed to the $flowMeans$ function as it will not remove them automatically.
+$varNames$ must contain a vector of parameter names that need to be analysed. By providing the parameter names, the user must make sure that no extra parameters (e.g., time and ID) are passed to the $flowMeans$ function as it will not remove them automatically.
 
 The $Labels$ value is a list of cluster membership labels at each iteration. As an example, this value can be used to visualize the first iteration:
 

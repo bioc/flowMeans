@@ -1,8 +1,8 @@
 Package: flowMeans
 Type: Package
 Title: Non-parametric Flow Cytometry Data Gating
-Version: 1.1.0
-Date: 2010-03-02
+Version: 1.1.1
+Date: 2010-05-10
 Author: Nima Aghaeepour
 Maintainer: Nima Aghaeepour <naghaeep@bccrc.ca>
 Description: Identifies cell populations in Flow Cytometry data using non-parametric clustering and segmented-regression-based change point detection. Note: R 2.11.0 or newer is required. 
