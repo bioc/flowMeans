@@ -1,5 +1,6 @@
 %\VignetteIndexEntry{flowMeans: Non-parametric Flow Cytometry Data Gating}
-%\VignetteKeywords{Preprocessing,statistics}
+%\VignetteDepends{flowMeans}
+%\VignetteKeywords{Preprocessing, statistics}
 
 
 \documentclass{article}
@@ -41,12 +42,13 @@ The $flowMeans$ function runs the main clustering procedure:
 <<stage0, results=HIDE>>=
 library(flowMeans)
 @
-<<stage1, echo=true>>=
+<<stage1, echo=TRUE>>=
 data(x)
-res <- flowMeans(x, c("FL1.H", "FL2.H", "FL3.H", "FL4.H"), MaxN=10)
+res <- flowMeans(x, varNames=c("FL1.H", "FL2.H", "FL3.H", "FL4.H"), 
+                 MaxN=10)
 @ 
 
-$varNames$ must contain a vector of parameter names that need to be analysed. By providing the parameter names, the user must make sure that no extra parameters (e.g., time and ID) are passed to the $flowMeans$ function as it will not remove them automatically.
+The input arguement $varNames$ must contain a vector of parameter names that need to be analysed. By providing the parameter names, the user must make sure that no extra parameters (e.g., time and ID) are passed to the $flowMeans$ function as it will not remove them automatically.
 
 The $Labels$ value is a list of cluster membership labels at each iteration. As an example, this value can be used to visualize the first iteration:
 
@@ -56,14 +58,15 @@ plot(x[,c(3,4)], col=res@Labels[[1]], pch=20);
 
 The $Mins$ vector contains the minimum distances between the merged clusters at each iteration:
 
-<<stage3, echo=true, fig=TRUE>>=
+<<stage3, fig=TRUE>>=
 plot(res@Mins, xlab='Iteration', ylab='Distance')
 @ 
 
 The $changepointDetection$ function can be used to find the change point in the chart of minimum distances and iterations to select the correct number of clusters. The $MinIndex$ value indicates the index of the change point:
 
-<<stage4, echo=true, fig=TRUE>>=
-plot(res@Mins, xlab=' ', ylab=' ', xlim=c(1, res@MaxN), ylim=c(0, max(res@Mins)))
+<<stage4, fig=TRUE>>=
+plot(res@Mins, xlab=' ', ylab=' ', xlim=c(1, res@MaxN), 
+     ylim=c(0, max(res@Mins)))
 ft<-changepointDetection(res@Mins)
 abline(ft$l1)
 abline(ft$l2);
@@ -73,14 +76,14 @@ plot(ft$MinIndex+1, res@Mins[ft$MinIndex+1], col='red', xlab='Iteration', ylab='
 
 The $Label$ vector indicates the cluster membership labels. The $plot$ function can be used to visualize this:
 
-<<stage5, echo=true, fig=TRUE>>=
-plot(x,res, c("FL1.H", "FL2.H"))
+<<stage5, fig=TRUE>>=
+plot(x, res, c("FL1.H", "FL2.H"))
 @
 
 The cluster membership labels can also be visualized in multi-dimensions:
 
-<<stage6, echo=true, fig=TRUE>>=
-plot(x,res, c("FL1.H", "FL2.H","FL3.H", "FL4.H"),pch='.')
+<<stage6,  fig=TRUE>>=
+plot(x, res, c("FL1.H", "FL2.H","FL3.H", "FL4.H"),pch='.')
 @
 
 
