@@ -9,7 +9,7 @@ clusters.
 }
 \usage{
 flowMeans(x, varNames=NULL, MaxN = NA, NumC = NA, iter.max = 50, nstart = 10,
-Mahalanobis = TRUE, Standardize = TRUE, Update = "Mahalanobis", OrthagonalResiduals=FALSE,
+Mahalanobis = TRUE, Standardize = TRUE, Update = "Mahalanobis", OrthagonalResiduals=TRUE,
 MaxCovN=NA, MaxKernN=NA, addNoise=TRUE)
 }
 \arguments{
