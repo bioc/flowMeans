@@ -55,8 +55,8 @@ function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis
   if (length(is.finite(x))!=length(x))
     stop('One or more of the values in \'x\' are not finite (i.e., are NaN, NA, Inf, or -Inf');
 
-  if (length(x[1,])<2)
-    stop('flowMeans only works on multidimentional data (2 or more variables are required');
+  ##if (length(x[1,])<2)
+    ##stop('flowMeans only works on multidimentional data (2 or more variables are required');
 
   if (addNoise){
     set.seed(546)
