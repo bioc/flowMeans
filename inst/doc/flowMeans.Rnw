@@ -39,7 +39,7 @@ Development of flowMeans is partly motivated by the advent of high-throughput fl
 
 The $flowMeans$ function runs the main clustering procedure:
 
-<<stage0, results=HIDE>>=
+<<stage0, results=hide>>=
 library(flowMeans)
 @
 <<stage1, echo=TRUE>>=
