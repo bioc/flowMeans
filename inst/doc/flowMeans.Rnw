@@ -32,7 +32,7 @@ Under the Artistic License, you are free to use and redistribute this software.
 
 \section{Overview}
 
-We apply a non-parametric approach to perform automated gating of cell populations in flow cytometry data. Our clustering results are obtained with counting the number of modes in every single dimension followed by multidimensional clustering. Then adjacent clusters (in terms of Euclidean or Mahalanobis distance) are merged. The number of clusters is determined using change point detection algorithm based on piecewise linear regression. This approach allows multiple clusters to represent the same population. This enables our framework to find non-spherical cell populations.
+We apply a non-parametric approach to perform automated gating of cell populations in flow cytometry data \cite{aghaeepour2011rapid}. Our clustering results are obtained with counting the number of modes in every single dimension followed by multidimensional clustering. Then adjacent clusters (in terms of Euclidean or Mahalanobis distance) are merged. The number of clusters is determined using change point detection algorithm based on piecewise linear regression. This approach allows multiple clusters to represent the same population. This enables our framework to find non-spherical cell populations.
 Development of flowMeans is partly motivated by the advent of high-throughput flow cytometry. Using the k-means algorithm, flowMeans avoids using complex statistical models. This, results in improving the runtime of current model-based population identification methods without decreasing their accuracy.
 
 \section{Example}
@@ -86,5 +86,7 @@ The cluster membership labels can also be visualized in multi-dimensions:
 plot(x, res, c("FL1.H", "FL2.H","FL3.H", "FL4.H"),pch='.')
 @
 
+\bibliographystyle{plain}
+\bibliography{flowMeans}
 
 \end{document}
