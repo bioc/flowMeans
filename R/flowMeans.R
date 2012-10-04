@@ -87,6 +87,7 @@ function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis
     MaxN <- 0;
     for (i in 1:length(x[1,]))
       MaxN<- (MaxN + countModes(x[1:MaxKernN,i])$NumberOfModes);
+    MaxN <- max(MaxN,3)
   }
   
   km<-kmeans(x,MaxN, iter.max=iter.max, nstart=nstart)
