@@ -129,6 +129,7 @@ function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis
     else{
       for (i in 1:N){
         for (j in 1:i){
+            print(sprintf('%d %d',i,j))
           if (i==j)
             next;
           ij <- min(mat[i,j],mat[j,i])

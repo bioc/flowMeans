@@ -20,6 +20,8 @@ distanceMatrix <-
             MaxCovNumber<-min(MaxCovN, length(Li));
             ##mat[i,j]=mean(mahalanobis(Li, mean(Lj), cov(Li[1:MaxCovNumber])))
             mat[i,j]=sum(Li-mean(Lj))^2/sd(Li[1:MaxCovNumber])
+            if (MaxCovNumber==1)
+                mat[i,j]=sum(Li-mean(Lj))^2
           }
           else
             mat[i,j]=sqrt((mean(Li)-mean(Lj))^2)
