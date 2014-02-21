@@ -56,5 +56,5 @@ setMethod("summary", signature(object="Populations"), function(object,...){
  cat(sprintf("flowMeans object with %d populations:\n\n", max(object@Label)));
  for (i in 1:max(object@Label))
    cat(sprintf("%d cells (%%%.03f) in population %d.\n",
-length(which(object@Label==i)), length(which(object@Label==i))/length(object@Label),i));
+length(which(object@Label==i)), 100*length(which(object@Label==i))/length(object@Label),i));
 })
