@@ -4,7 +4,7 @@ Title: Non-parametric Flow Cytometry Data Gating
 Version: 1.17.1
 Date: 2010-05-10
 Author: Nima Aghaeepour
-Maintainer: Nima Aghaeepour <naghaeep@bccrc.ca>
+Maintainer: Nima Aghaeepour <naghaeep@gmail.com>
 Description: Identifies cell populations in Flow Cytometry data using
         non-parametric clustering and segmented-regression-based change
         point detection. Note: R 2.11.0 or newer is required.
