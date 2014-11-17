@@ -89,6 +89,10 @@ function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis
       MaxN<- (MaxN + countModes(x[1:MaxKernN,i])$NumberOfModes);
     MaxN <- max(MaxN,3)
   }
+  if (is.na(NumC)){
+      if (MaxN<NumC)
+          MaxN=NumC+10
+  }
   
   km<-kmeans(x,MaxN, iter.max=iter.max, nstart=nstart)
 
@@ -107,7 +111,7 @@ function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis
   ListOfLabels <- c(1:MaxN);
   for (i in 1:MaxN)
     MergedClusters[[i]] <- c(i);
-  while(max(Label)>1){
+  while(max(Label)>NumC){
     #print(max(Label));
     Min<-Max*2
     I<-0;
@@ -161,12 +165,14 @@ function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis
   }
   Mins[MaxN-N+1] <- Min;
 
-  temp <- changepointDetection(Mins, OrthagonalResiduals=OrthagonalResiduals);
-  Line1<-temp$l1;
-  Line2<-temp$l2;
-  MinIndex <- MaxN-temp$MinIndex;
-  Label <- Labels[[MaxN-MinIndex+1]]
-
+  if (is.na(NumC)){
+      temp <- changepointDetection(Mins, OrthagonalResiduals=OrthagonalResiduals);
+      Line1<-temp$l1;
+      Line2<-temp$l2;
+      MinIndex <- MaxN-temp$MinIndex;
+      Label <- Labels[[MaxN-MinIndex+1]]
+  }
+  
   if (!is.na(NumC)){
     MinIndex <- NumC
     Label <- Labels[[MaxN-MinIndex+1]]
