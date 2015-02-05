@@ -89,7 +89,7 @@ function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis
       MaxN<- (MaxN + countModes(x[1:MaxKernN,i])$NumberOfModes);
     MaxN <- max(MaxN,3)
   }
-  if (is.na(NumC)){
+  if (!is.na(NumC)){
       if (MaxN<NumC)
           MaxN=NumC+10
   }
@@ -111,8 +111,11 @@ function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis
   ListOfLabels <- c(1:MaxN);
   for (i in 1:MaxN)
     MergedClusters[[i]] <- c(i);
-  while(max(Label)>NumC){
+  while(max(Label)>1){
     #print(max(Label));
+      if (!is.na(NumC))
+          if (max(Label)<=NumC)
+              break
     Min<-Max*2
     I<-0;
     J<-0;
