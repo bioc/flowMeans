@@ -114,8 +114,10 @@ function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis
   while(max(Label)>1){
     #print(max(Label));
       if (!is.na(NumC))
-          if (max(Label)<=NumC)
+          if (max(Label)<=NumC){
+              Min=min(mat)
               break
+          }
     Min<-Max*2
     I<-0;
     J<-0;
