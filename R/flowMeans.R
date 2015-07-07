@@ -170,6 +170,9 @@ function(x, varNames=NULL, MaxN=NA, NumC=NA, iter.max=50, nstart=10, Mahalanobis
   }
   Mins[MaxN-N+1] <- Min;
 
+  Line1=lm(1~1)
+  Line2=lm(1~1)
+  
   if (is.na(NumC)){
       temp <- changepointDetection(Mins, OrthagonalResiduals=OrthagonalResiduals);
       Line1<-temp$l1;
