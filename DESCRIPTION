@@ -1,7 +1,7 @@
 Package: flowMeans
 Type: Package
 Title: Non-parametric Flow Cytometry Data Gating
-Version: 1.31.0
+Version: 1.32.0
 Date: 2010-05-10
 Author: Nima Aghaeepour
 Maintainer: Nima Aghaeepour <naghaeep@gmail.com>
